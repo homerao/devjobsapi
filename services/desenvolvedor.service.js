@@ -7,8 +7,17 @@ class DesenvolvedorService {
         return repository.create(desenvolvedor)
       }
 
-      update(desenvolvedor){
+     update(desenvolvedor){
         return repository.update(desenvolvedor)
+     }
+
+    async findallPaginated(limit, offset){
+      return await repository.findAll(limit, offset)
+     }
+
+
+     count(){
+       return repository.count()
      }
 }
 

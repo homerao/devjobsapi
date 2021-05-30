@@ -9,10 +9,22 @@ class DesenvolvedorController {
              res.json(saved)
       }
 
-      update(req, res, next){
+      async update(req, res, next){
           let desenvolvedor = req.body
-         res.json(service.update(desenvolvedor))
-  }
+          let updated = await service.update(desenvolvedor)
+         res.json(updated)
+      }
+
+
+      async findAll(req, res, next){
+       let {limit, offset} = req.query
+       console.log("limit "+ limit + " offset" +offset)
+       let results = await service.findallPaginated( limit, offset)
+       console.log(results)
+       return res.json(results)
+      }
+
+      
 }
 
 module.exports = new DesenvolvedorController

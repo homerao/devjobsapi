@@ -23,9 +23,7 @@ const mid = (req, res, next)=>{
 }
 
 /* GET users listing. */
-router.get('/find.all', function(req, res, next) {
-  res.json('find all');
-});
+
 
 router.get('/find.by.id', function(req, res, next) {
   res.json('find by id');
@@ -39,9 +37,9 @@ router.get('/find.by.skill', function(req, res, next) {
   res.json('skill');
 });
 
-router.get('/update',function(req, res, next) {
-  res.json('update');
-});
+router.put('/update', controller.update);
 
 router.post('/create',  controller.create)
+
+router.get('/find.all',  controller.findAll)
 module.exports = router;
