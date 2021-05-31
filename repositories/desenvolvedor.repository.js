@@ -1,5 +1,5 @@
-const sequelize = require('../dbConfig/dbConfig')
-const model = require('../models/DESENVOLVEDORES')
+
+const model = require('../models/Desenvolvedor')
 const {Op} = require('sequelize')
 
 class DesenvolvedorRepository {
@@ -17,6 +17,12 @@ class DesenvolvedorRepository {
       let results= null
         results = await model.findAll({limit: limit, offset:offset})
          return results
+    }
+
+    async findByPk(pk){
+        let result = null
+        result = await model.findByPk(pk)
+        return result
     }
 
 

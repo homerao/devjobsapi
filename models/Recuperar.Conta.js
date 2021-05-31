@@ -1,36 +1,29 @@
 const Sequelize = require('../dbConfig');
 const {Model, DataTypes} = require('sequelize')
 
-class Candidatura  extends Model{}
-Candidatura.init({
+class RecuperarConta extends Model {}
+
+RecuperarConta.init({
   ID: {
     autoIncrement: true,
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true
   },
-  ID_VAGA: {
+  CODIGO: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  ID_ACC: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'VAGAS',
+      model: 'CONTAS',
       key: 'ID'
     }
   },
-  ID_DESENVOLVEDOR: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'DESENVOLVEDORES',
-      key: 'ID'
-    }
-  },
-  DATA_CANDIDATURA: {
-    type: DataTypes.DATE,
-    allowNull: true
-  },
-  STATUS_CANDIDATURA: {
-    type: DataTypes.ENUM('CANCELADA','ATIVA','DESATIVADA','FINALIZADA'),
+  STATUS_RECUPERACAO: {
+    type: DataTypes.ENUM('RECUPERADO','EXPIRADO','REJEITADO'),
     allowNull: true
   },
   CREATED_AT: {
@@ -43,7 +36,7 @@ Candidatura.init({
   }
 }, {
   Sequelize,
-  tableName: 'CANDIDATURAS',
+  tableName: 'RECUPERAR_CONTAS',
   timestamps: false,
   indexes: [
     {
@@ -55,20 +48,13 @@ Candidatura.init({
       ]
     },
     {
-      name: "FK_CANDIDATURAS_DESENVOLVEDORES",
+      name: "FK_RECUPERAR_CONTAS_CONTAS",
       using: "BTREE",
       fields: [
-        { name: "ID_DESENVOLVEDOR" },
-      ]
-    },
-    {
-      name: "FK_CANDIDATURAS_VAGAS",
-      using: "BTREE",
-      fields: [
-        { name: "ID_VAGA" },
+        { name: "ID_ACC" },
       ]
     },
   ]
-});
+})
 
-module.exports = Candidatura
+module.exports = RecuperarConta

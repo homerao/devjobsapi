@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../dbConfig/dbConfig');
+const Candidatura = require('./Candidatura')
 
 class Desenvolvedor extends Model {}
 
@@ -63,4 +64,6 @@ Desenvolvedor.init({
     },
   ]
 });
-module.exports = Desenvolvedor
+
+
+module.exports =  Desenvolvedor

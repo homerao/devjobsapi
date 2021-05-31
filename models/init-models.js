@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _CANDIDATURAS = require("./CANDIDATURAS");
-var _CONTAS = require("./CONTAS");
-var _CONTATO_CANDIDATURAS = require("./CONTATO_CANDIDATURAS");
-var _DESENVOLVEDORES = require("./DESENVOLVEDORES");
-var _EMPRESAS = require("./EMPRESAS");
-var _ENDERECOS = require("./ENDERECOS");
-var _RECUPERAR_CONTAS = require("./RECUPERAR_CONTAS");
-var _VAGAS = require("./VAGAS");
+var _CANDIDATURAS = require("./Candidatura");
+var _CONTAS = require("./Conta");
+var _CONTATO_CANDIDATURAS = require("./Contato.Candidatura");
+var _DESENVOLVEDORES = require("./Desenvolvedor");
+var _EMPRESAS = require("./Empresa");
+var _ENDERECOS = require("./Endereco");
+var _RECUPERAR_CONTAS = require("./Recuperar.Conta");
+var _VAGAS = require("./Vaga");
 
 function initModels(sequelize) {
   var CANDIDATURAS = _CANDIDATURAS(sequelize, DataTypes);
