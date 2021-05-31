@@ -19,4 +19,14 @@ class EmpresaRepository {
     async findAll(limit, offset){
         return model.findAll({limit:limit, offset:offset})
     }
+
+    async findall(){
+        return model.findAll()
+    }
+
+    async count(){
+        return model.count()
+    }
 }
+
+module.exports = EmpresaRepository
