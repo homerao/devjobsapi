@@ -29,4 +29,4 @@ class EmpresaRepository {
     }
 }
 
-module.exports = EmpresaRepository
+module.exports = new EmpresaRepository

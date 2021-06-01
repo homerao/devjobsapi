@@ -29,4 +29,4 @@ class ContatoCandidaturaRepository {
     }
 }
 
-module.exports = ContatoCandidaturaRepository
+module.exports = new ContatoCandidaturaRepository

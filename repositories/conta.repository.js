@@ -29,4 +29,4 @@ class ContaRepository {
     }
 }
 
-module.exports = ContaRepository
+module.exports = new ContaRepository

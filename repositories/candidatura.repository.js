@@ -29,4 +29,4 @@ class CandidaturaRepository {
     }
 }
 
-module.exports = CandidaturaRepository
+module.exports = new CandidaturaRepository
