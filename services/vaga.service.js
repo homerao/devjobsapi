@@ -11,12 +11,14 @@ class VagaService {
         return repository.update(vaga,{where:{ID:vaga.ID}})
     }
     async findByPk(pk){
-
+        return repository.findByPk(pk)
     }
 
     async findAll(limit, offset){
-
+        return repository.findAll({limit:limit, offset:offset })
     }
+
+
 
     async findall(){
 
@@ -26,3 +28,5 @@ class VagaService {
         
     }
 }
+
+module.exports = new VagaService
