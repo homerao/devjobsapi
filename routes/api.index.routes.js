@@ -1,5 +1,5 @@
 const indexRouter = require('express').Router()
-const desenvolvedoresRoutes = require('./desenvolvedores.routes')
+const desenvolvedoresRoutes = require('./desenvolvedor.routes')
 const candidaturaRoutes = require('./candidatura.routes')
 const contaRoutes = require('./conta.routes')
 const contatoRoutes = require('./contato.candidatura.routes')

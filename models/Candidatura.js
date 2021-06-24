@@ -1,4 +1,4 @@
-const Sequelize = require('../dbConfig');
+const sequelize = require('../dbConfig/dbConfig');
 const {Model, DataTypes} = require('sequelize')
 
 class Candidatura  extends Model{}
@@ -42,7 +42,7 @@ Candidatura.init({
     allowNull: true
   }
 }, {
-  Sequelize,
+  sequelize,
   tableName: 'CANDIDATURAS',
   timestamps: false,
   indexes: [
