@@ -1,0 +1,10 @@
+<%- include('./partials/header') %>
+<% if(logged){ %>
+    <%- include('./partials/logged_navbar') %>
+    <% } else {%>
+        <%- include('./partials/unloged_navbar') %>
+        <% }%>
+
+  <%- body %>
+        
+        <%- include('./partials/footer') %>       

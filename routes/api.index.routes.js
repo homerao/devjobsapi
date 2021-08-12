@@ -1,5 +1,6 @@
 const indexRouter = require('express').Router()
 const desenvolvedoresRoutes = require('./desenvolvedor.routes')
+const web = require('../routes/web.index.routes')
 const candidaturaRoutes = require('./candidatura.routes')
 const contaRoutes = require('./conta.routes')
 const contatoRoutes = require('./contato.candidatura.routes')
@@ -14,6 +15,7 @@ indexRouter.use('/contatos',contatoRoutes)
 indexRouter.use('/empresas',empresaRoutes)
 indexRouter.use('/recuperar.contas',recuperarContaRoutes)
 indexRouter.use('/vagas',vagaRoutes)
+indexRouter.use('/web',web)
 
 
 indexRouter.get('/', (req, res, next)=>{
