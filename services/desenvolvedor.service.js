@@ -15,6 +15,10 @@ class DesenvolvedorService {
       return await repository.findAll(limit, offset)
      }
 
+    async findByCpf(cpf){
+      return await repository.findByCpf(cpf)  
+    }
+
 
      count(){
        return repository.count()

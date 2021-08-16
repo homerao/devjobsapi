@@ -15,7 +15,15 @@ class ContaRepository {
     async findByPk(pk){
       return model.findByPk(pk)
     }
+    async findbyEmail(email){
+       let result = await model.findOne({where:{email:{[Op.eq]:email}}})
+       return await result.email
+    }
+    async findAccount(email){
+        let result = await model.findOne({where:{email:{[Op.eq]:email}}})
+       return await result.toJSON()
 
+    }
     async findAll(limit, offset){
         return model.findAll({limit:limit, offset: offset})
     }

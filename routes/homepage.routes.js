@@ -27,7 +27,7 @@ router.get('/vagas', function(req, res, next) {
 });
 
 router.get('/novo-cadastro', function(req, res, next) {
-  res.render('web.pages/escolha-cadastro', { title: 'Escolha um tipo de cadastro' });
+  res.render('web.pages/cadastro', { title: 'Escolha um tipo de cadastro', logged:false });
 });
 
 router.get('/empresas', function(req, res, next) {

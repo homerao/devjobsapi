@@ -1,16 +1,16 @@
-const Sequelize = require('../dbConfig');
-const {Model, DataTypes} = require('sequelize')
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../dbConfig/dbConfig');
 
 class Conta extends Model {}
 
 Conta.init({
-  ID: {
+  id: {
     autoIncrement: true,
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true
   },
-  ID_ACC: {
+  id_acc: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -18,29 +18,29 @@ Conta.init({
       key: 'ID'
     }
   },
-  EMAIL: {
+  email: {
     type: DataTypes.STRING(50),
     allowNull: false,
     unique: "EMAIL"
   },
-  PASSWRD: {
+  passwrd: {
     type: DataTypes.STRING(128),
     allowNull: true
   },
-  ACC_STATUS: {
+  acc_status: {
     type: DataTypes.ENUM('DESATIVADA','ATIVA','BLOQUEADA','INATIVA'),
     allowNull: true
   },
-  CREATED_AT: {
+  created_at: {
     type: DataTypes.DATE,
     allowNull: true
   },
-  UPDATED_AT: {
+  updated_at: {
     type: DataTypes.DATE,
     allowNull: true
   }
 }, {
-  Sequelize,
+  sequelize,
   tableName: 'CONTAS',
   timestamps: false,
   indexes: [

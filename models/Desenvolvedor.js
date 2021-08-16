@@ -5,46 +5,46 @@ const Candidatura = require('./Candidatura')
 class Desenvolvedor extends Model {}
 
 Desenvolvedor.init({
-  ID: {
+  id: {
     autoIncrement: true,
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true
   },
-  NOME_COMPLETO: {
+  nome_completo: {
     type: DataTypes.STRING(40),
     allowNull: false
   },
-  CPF: {
+  cpf: {
     type: DataTypes.CHAR(11),
     allowNull: false
   },
-  DATA_NASCTO: {
+  data_nascto: {
     type: DataTypes.DATEONLY,
     allowNull: true
   },
-  GENERO: {
+  genero: {
     type: DataTypes.ENUM('MASCULINO','FEMININO','N.A'),
     allowNull: true
   },
-  ESTADO_CIVIL: {
+  estado_civil: {
     type: DataTypes.ENUM('CASADO','SOLTEIRO','DIVORCIADO','AMASIADO'),
     allowNull: true
   },
-  NRO_FILHOS: {
+  nro_filhos: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  NACIONALIDADE: {
+  nacionalidade: {
     type: DataTypes.STRING(30),
     allowNull: true
   },
-  CREATED_AT: {
+  created_at: {
     type: DataTypes.DATE,
     allowNull: true,
     defaultValue: Date.now()
   },
-  UPDATED_AT: {
+  updated_at: {
     type: DataTypes.DATE,
     allowNull: true,
     defaultValue: Date.now()
@@ -66,4 +66,4 @@ Desenvolvedor.init({
 });
 
 
-module.exports =  Desenvolvedor
+module.exports =   Desenvolvedor

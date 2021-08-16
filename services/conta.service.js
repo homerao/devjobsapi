@@ -9,13 +9,13 @@ class ContaService {
     }
 
     async update(conta){
-      return repository.update(conta, {where:{ID:conta.ID}})
+      return repository.update(conta)
     }
     async findByPk(pk){
       return repository.findByPk(pk)
     }
     async findByEmail(email){
-      return repository.findOne({where:{email:email}})
+      return await repository.findbyEmail(email)
     }
 
     async findAll(limit, offset){

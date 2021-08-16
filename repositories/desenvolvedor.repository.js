@@ -25,7 +25,16 @@ class DesenvolvedorRepository {
         return result
     }
 
-
+    async findByCpf(cpf){
+        let data = null
+     model.findOne({where: { cpf:{[Op.eq]:cpf}}})
+     .then((result)=>{ data= result 
+                      })
+     .catch((err)=>{ console.log('erro, não foi possível'); return null})
+     
+         
+         return data
+    }
 
 
     async count(){
