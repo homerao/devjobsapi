@@ -14,6 +14,9 @@ class DesenvolvedorService {
     async findallPaginated(limit, offset){
       return await repository.findAll(limit, offset)
      }
+     async findByPk(pk){
+      return await repository.findByPk(pk)
+     }
 
     async findByCpf(cpf){
       return await repository.findByCpf(cpf)  

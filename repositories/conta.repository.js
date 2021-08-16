@@ -17,7 +17,12 @@ class ContaRepository {
     }
     async findbyEmail(email){
        let result = await model.findOne({where:{email:{[Op.eq]:email}}})
-       return await result.email
+       if(result !== null){
+        return await result.email
+       } else {
+           return null
+       }
+       
     }
     async findAccount(email){
         let result = await model.findOne({where:{email:{[Op.eq]:email}}})

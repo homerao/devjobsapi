@@ -13,7 +13,7 @@ class ContatoCandidaturaRepository {
     }
 
     async findByPk(pk){
-      return model.findByPk(pk)
+      return await (await model.findByPk(pk)).toJSON()
     }
 
     async findAll(limit, offset){

@@ -22,7 +22,12 @@ class DesenvolvedorRepository {
     async findByPk(pk){
         let result = null
         result = await model.findByPk(pk)
-        return result
+        if(result !== null){
+            return await result.toJSON()
+        } else {
+            return null
+        }
+        
     }
 
     async findByCpf(cpf){
