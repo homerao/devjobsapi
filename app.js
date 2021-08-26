@@ -17,15 +17,15 @@ port:3306,
 password: process.env.PASSWORD,
 database: 'devjobs'})
 const sessionStore = new MysqlStore({schema: {
-    tableName: 'sessions',
+    tableName: 'SESSAO_DEVJOBS',
     columnNames: {
         session_id: 'session_id',
-        expires: 'expires',
+        expires: 'tempo_sessao',
         data: 'data'
     }}}, connection)
 var app = express();
 app.use(logger('dev'));
-app.use(session({secret:'umasenhasegura', expires: '60s', resave:false, saveUninitialized:true, store: sessionStore}))
+app.use(session({secret:'umasenhasegura', expires: '60s', resave:false, saveUninitialized:false, store: sessionStore}))
 app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

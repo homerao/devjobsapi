@@ -23,7 +23,29 @@ const mid = (req, res, next)=>{
 }
 
 /* GET users listing. */
+router.get('/carregar_menu', function(req, res, next) {
+  let session = req.session
+  let data = session.data
 
+    
+    if( typeof data !== "undefined"){
+      res.render('developer/main_menu', data);
+    }else {
+      res.redirect('/login', {title:'Login', logged:false});
+    }
+});
+
+router.get('/dados_edit', function(req, res, next) {
+  let session = req.session
+  let data = session.data
+  data.user = controller.findOne(req, res)
+    
+    if( typeof data !== "undefined"){
+      res.render('developer/developer_edit', data);
+    }else {
+      res.redirect('/login', {title:'Login', logged:false});
+    }
+});
 
 router.get('/find.by.id', function(req, res, next) {
   res.json('find by id');

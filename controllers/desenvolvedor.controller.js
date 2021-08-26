@@ -42,6 +42,11 @@ class DesenvolvedorController {
           
              
       }
+      async findOne(req, res){
+       let id = req.body.id
+       let desenvolvedor = await service.findByPk(id)
+       return desenvolvedor
+      }
 
       async update(req, res, next){
           let desenvolvedor = req.body

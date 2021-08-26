@@ -9,7 +9,7 @@ class ContaController {
         let acc = await acc_service.findByEmail(email)
         let usuario;
         if(acc !== null){
-          usuario = await service.findByPk(acc.id_acc)
+          usuario = await service.findOne(acc.id_acc)
           console.log(usuario)
           let data = {user:usuario, logged:true, title:'Menu do usuário'}
           req.session.data = data

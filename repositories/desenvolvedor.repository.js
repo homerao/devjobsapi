@@ -23,10 +23,18 @@ class DesenvolvedorRepository {
         let result = null
         result = await model.findByPk(pk)
         if(result !== null){
-            return await result.toJSON()
+            return result
         } else {
             return null
         }
+        
+    }
+    async findOne(id){
+        let data = null
+        model.findOne({where: { id:{[Op.eq]:id}}})
+        .then((result)=>{ data= result 
+                         })
+        .catch((err)=>{ console.log('erro, não foi possível' + err); return null})
         
     }
 
